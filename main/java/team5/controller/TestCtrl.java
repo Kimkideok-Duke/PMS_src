@@ -2,13 +2,19 @@ package team5.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import team5.service.Team5Service;
+import team5.service.TestService;
 
 @Controller
 public class TestCtrl {
     @Autowired(required=false)
-    private Team5Service service;
+    private TestService service;
     
+    // http://localhost:5080/final/main.do
+    @RequestMapping("main.do")
+    public String main() {
+    	return "WEB-INF\\views\\index.jsp";
+    }
     
 }
